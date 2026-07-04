@@ -3,21 +3,19 @@
 // Note that this config is unrelated to the Vercel Edge Runtime and is also required when running locally.
 // https://docs.sentry.io/platforms/javascript/guides/nextjs/
 
+
 import * as Sentry from "@sentry/nextjs";
 
 Sentry.init({
   dsn: "https://03f1501849e9930789be2d3e6bb6fd5d@o4510601340977152.ingest.us.sentry.io/4511676072919040",
 
-  // Define how likely traces are sampled. Adjust this value in production, or use tracesSampler for greater control.
-  tracesSampleRate: 1,
-
-  // Enable logs to be sent to Sentry
-  enableLogs: true,
+  tracesSampleRate: 1.0,
 
   dataCollection: {
-    // To disable sending user data and HTTP bodies, uncomment the lines below. For more info visit:
-    // https://docs.sentry.io/platforms/javascript/guides/nextjs/configuration/options/#dataCollection
-    // userInfo: false,
-    // httpBodies: [],
+    // Optional
+    // genAI: {
+    //   inputs: false,
+    //   outputs: false,
+    // },
   },
 });
